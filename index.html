@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Multi-Region Failover</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <p class="eyebrow">College project dashboard</p>
+      <h1>Adaptive Multi-Region Failover</h1>
+
+      <section class="grid">
+        <article>
+          <h2>Primary Region</h2>
+          <p>us-east-1</p>
+        </article>
+        <article>
+          <h2>Secondary Region</h2>
+          <p>us-west-2</p>
+        </article>
+        <article>
+          <h2>Currently Serving</h2>
+          <p id="serving-region">Detecting...</p>
+        </article>
+        <article>
+          <h2>System Status</h2>
+          <p id="system-status">CHECKING</p>
+        </article>
+      </section>
+
+      <p id="message" class="message">Calling failover-router...</p>
+      <div class="actions">
+        <button id="refresh" type="button">Refresh status</button>
+      </div>
+
+      <section class="chaos">
+        <h2>Chaos engineering</h2>
+        <p>
+          Simulates a <strong>us-east-1</strong> outage by setting
+          <code>orders-service-east</code> reserved concurrency to 0. Traffic
+          should fail over to <strong>us-west-2</strong>. No extra chaos Lambda
+          is used.
+        </p>
+        <label class="toggle">
+          <input id="chaos-toggle" type="checkbox" />
+          <span>Simulate us-east-1 failure</span>
+        </label>
+        <p id="chaos-message" class="message">East is enabled.</p>
+      </section>
+
+      <section class="orders">
+        <h2>Optional order test</h2>
+        <p>Uses the same router URL. Partition key is <code>orderId</code>.</p>
+        <label>
+          Order ID
+          <input id="order-id" type="text" value="order-001" />
+        </label>
+        <label>
+          Customer ID
+          <input id="customer-id" type="text" value="cust-001" />
+        </label>
+        <label>
+          Product ID
+          <input id="product-id" type="text" value="prod-001" />
+        </label>
+        <div class="actions">
+          <button id="create-order" type="button">Create order</button>
+          <button id="get-order" type="button">Get order</button>
+        </div>
+        <pre id="order-result"></pre>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
