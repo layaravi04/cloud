@@ -1,5 +1,5 @@
 // PASTE your failover-router Function URL here after you create it in AWS.
-const ROUTER_URL = "PASTE_FUNCTION_URL_HERE";
+const ROUTER_URL = "https://odg53jgahs6s7ru7qp5t3fmeky0ulfss.lambda-url.us-east-1.on.aws/";
 
 const servingEl = document.getElementById("serving-region");
 const statusEl = document.getElementById("system-status");
