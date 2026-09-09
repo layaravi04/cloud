@@ -236,9 +236,3 @@ deploy.ps1
 **Lambda Function URL:** Provides an HTTPS endpoint for directly invoking a Lambda function.
 
 **IAM:** AWS service used to securely control permissions between resources.
-
-## Inspiration
-
-AWS Guidance for Resilient Data Applications Using Amazon DynamoDB:
-
-https://aws.amazon.com/solutions/guidance/resilient-data-applications-using-amazon-dynamodb/
