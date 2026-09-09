@@ -35,21 +35,6 @@
         <button id="refresh" type="button">Refresh status</button>
       </div>
 
-      <section class="chaos">
-        <h2>Chaos engineering</h2>
-        <p>
-          Simulates a <strong>us-east-1</strong> outage by setting
-          <code>orders-service-east</code> reserved concurrency to 0. Traffic
-          should fail over to <strong>us-west-2</strong>. No extra chaos Lambda
-          is used.
-        </p>
-        <label class="toggle">
-          <input id="chaos-toggle" type="checkbox" />
-          <span>Simulate us-east-1 failure</span>
-        </label>
-        <p id="chaos-message" class="message">East is enabled.</p>
-      </section>
-
       <section class="orders">
         <h2>Optional order test</h2>
         <p>Uses the same router URL. Partition key is <code>orderId</code>.</p>
